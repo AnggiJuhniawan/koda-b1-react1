@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-function UserPreview({ userId }) {
+function UserPreview({ userId = 2 }) {
   const [name, setName] = useState("Memuat...");
   const [detikAktif, setDetikAktif] = useState(0);
 
