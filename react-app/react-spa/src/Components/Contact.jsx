@@ -89,10 +89,10 @@ function Contact() {
                   key={item.id}
                   className="rounded-lg border border-slate-200 p-4"
                 >
-                  <h3 className="font-semibold">item.name</h3>
+                  <h3 className="font-semibold">{item.nama}</h3>
                   <p className="text-sm text-slate-500">{item.email}</p>
                   <p className="mt-2 whitespace-pre-wrap wrap-break-word text-slate-700">
-                    {item.message_pesan}
+                    {item.pesan}
                   </p>
                 </div>
               ))}
