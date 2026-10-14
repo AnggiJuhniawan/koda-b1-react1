@@ -49,32 +49,58 @@ function Contact() {
   }
 
   return (
-    <div>
-      <h1>Contact Us</h1>
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          onChange={handleChange}
-          name="name"
-          placeholder="Nama Lengkap"
-          value={form.name}
-        />
-        <input
-          type="email"
-          onChange={handleChange}
-          name="email"
-          placeholder="Email"
-          value={form.email}
-        />
-        <textarea
-          name="message_pesan"
-          onChange={handleChange}
-          placeholder="Message"
-          value={form.pesan}
-        />
-        <button type="submit"> Kirim Pesan</button>
-      </form>
-    </div>
+    <section>
+      <div>
+        <h1>Contact Us</h1>
+        <form action="" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            onChange={handleChange}
+            name="name"
+            placeholder="Nama Lengkap"
+            value={form.name}
+          />
+          <input
+            type="email"
+            onChange={handleChange}
+            name="email"
+            placeholder="Email"
+            value={form.email}
+          />
+          <textarea
+            name="message_pesan"
+            onChange={handleChange}
+            placeholder="Message"
+            value={form.pesan}
+          />
+          <button type="submit"> Kirim Pesan</button>
+        </form>
+
+        {/* Daftar Pesan */}
+        <div>
+          <h2>Daftar Pesan ({messages.length})</h2>
+
+          {messages.length === 0 ? (
+            <p>Belum ada Pesan</p>
+          ) : (
+            <div className="space-y-4">
+              {messages.map((item) => (
+                <div
+                  key={item.id}
+                  className="rounded-lg border border-slate-200 p-4"
+                >
+                  <h3 className="font-semibold">item.name</h3>
+                  <p className="text-sm text-slate-500">{item.email}</p>
+                  <p className="mt-2 whitespace-pre-wrap wrap-break-word text-slate-700">
+                    {item.message_pesan}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
 
